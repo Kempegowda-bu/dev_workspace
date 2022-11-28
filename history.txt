@@ -1,0 +1,962 @@
+    1  cd
+    2  suod yum update
+    3  sudo yum update
+    4  pwd
+    5  ls
+    6  ll
+    7  ls -lrt
+    8  ls -a
+    9  mkdir linuxcmds
+   10  cd linuxcmds
+   11  ll
+   12  touch file{1..5}.txt
+   13  ll
+   14  mkdir -p dir1/dir2/dir3
+   15  ll
+   16  ls -lrt
+   17  touch abc1 /dir1
+   18  /dir1 touch abc1 
+   19  ls -lrt
+   20  touch /dir/abc1
+   21  touch dir/abc1
+   22  cat dir/abc1
+   23  pwd
+   24  touch /home/ec2-user/linuxcmds/dir1/abc1
+   25  ls /home/ec2-user/linuxcmds/dir1/abc1
+   26  cd /home/ec2-user/linuxcmds/dir1
+   27  ll
+   28  cat >/home/ec2-user/linuxcmds/dir1/abc1
+   29  cat /home/ec2-user/linuxcmds/dir1/abc1
+   30  cd ..
+   31  vi file1.txt
+   32  wc -l file1.txt
+   33  wc -l-w file1.txt
+   34  wc -lw file1.txt
+   35  wc -lwc file1.txt
+   36  echo -e "hello\nworld"
+   37  echo -e "hello\nworld" >abc1
+   38  cat abc1
+   39  echo *
+   40  touch xyz{1..5}
+   41  ll
+   42  rm xyz1
+   43  ll
+   44  rm xyz*
+   45  ll
+   46  exit
+   47  history
+   48  more file1
+   49  more file1*
+   50  cd linuxcmds
+   51  more file1*
+   52  less file1*
+   53  more file1*
+   54  free
+   55  free -h
+   56  df -h
+   57  df -h .
+   58  du -sh .
+   59  du -sh dir1
+   60  ll
+   61  du -sh *
+   62  head file1.txt
+   63  head -5 file1.txt
+   64  head -3 file1.txt
+   65  head -3,$ file1.txt
+   66  head -3$ file1.txt
+   67  head -3 $ file1.txt
+   68  head -n file1.txt
+   69  head -n+1 file1.txt
+   70  head -n+ 1 file1.txt
+   71  head -n + 1 file1.txt
+   72  tail -n+1 file1.txt
+   73  tail -n+4 file1.txt
+   74  ll
+   75  vi file5.txt
+   76  head -n 5
+   77  head -n 5 file5.txt
+   78  head -5 file5.txt
+   79  head -c 5 file5.txt
+   80  head -c 8 file5.txt
+   81  ls -lrt
+   82  ls -lrt | head -5 | tail -1
+   83  ls -lrt | tail -n+4
+   84  ls
+   85  cat file1.txt
+   86  grep -i "Day" file1.txt
+   87  grep -i "day" file1.txt
+   88  ll 
+   89  cd linuxcmds
+   90  ll
+   91  cat /etc/os-release
+   92  cat /etc/os-release | grep "LINUX"
+   93  cat /etc/os-release | grep "Linux"
+   94  cat /etc/os-release | grep "Linux" | awk '{print $1}'
+   95  uname -a
+   96  uname -r
+   97  cat /etc/os-release | grep -i "Linux"
+   98  cat /etc/os-release | grep "Linux" | awk -F "=" '{print $1}'
+   99  exit
+  100  cd linuxcmds
+  101  grep -n "Day"
+  102  grep -n "Day" file1.txt
+  103  grep -c "Day" file1.txt
+  104  grep -w "Day" file1.txt
+  105  grep -w "com" file1.txt
+  106  grep -l "com" file1.txt
+  107  grep -n "com" file1.txt
+  108  grep -w "commitment" file1.txt
+  109  grep -l day *
+  110  grep -lr day *
+  111  grep -l-r day *
+  112  egrep "day|commitment" file1.txt
+  113  grep "^n" file1.txt
+  114  grep "^a" file1.txt
+  115  grep "^N" file1.txt
+  116  grep "^y$" file1.txt
+  117  grep "^.$" file1.txt
+  118  grep "^l$" file1.txt
+  119  grep "^l.$" file1.txt
+  120  grep "^m$" file1.txt
+  121  grep -o "Day" file1.txt
+  122  grep -h "Day" file1.txt
+  123  sudo su
+  124  cat /etc/os-release
+  125  cat /etc/os-release | grep "VERSION"
+  126  cat /etc/passwd
+  127  echo $SHELL
+  128  ll
+  129  cp abc1 /dir1
+  130  pwd
+  131  cp abc1 /home/ec2-user/linuxcmds/dir1
+  132  ll
+  133  cd dir1
+  134  ll
+  135  cp /home/ec2-user/linuxcmds/dir1 .
+  136  cp -r /home/ec2-user/linuxcmds/dir1 .
+  137  cp -r /home/ec2-user/linuxcmds/dir1 /home/ec2-user/linuxcmds/dir1/dir2
+  138  cp -r /home/ec2-user/linuxcmds/dir1 /home/ec2-user
+  139  cd ..
+  140  uname -r
+  141  uname -a
+  142  sed 's/day/DAY/g' file1.txt
+  143  sed -n '3p' file1.txt
+  144  sed -n '3,6p' file1.txt
+  145  cat file1.txt
+  146  sed 's/day/DAY/g' file1.txt
+  147  sed -n '/Day/p' file1.txt
+  148  sed '3d' file1.txt
+  149  ll
+  150  ll | cut -d " " f5
+  151  ll | cut -d " " -f5
+  152  ll | awk -f '{print $5}'
+  153  ll | awk -F '{print $5}'
+  154  cat >employee
+  155  cat employee
+  156  awk -F " " '{print $4}'
+  157  awk -F " " '{print $4}' employee
+  158  awk '/manager/ {print}' employee
+  159  ls -lrt| awk -F " " '{print $NF}'
+  160  ls -lrt| awk -F " " '{print $NF-1}'
+  161  ls -lrt
+  162  ls -lrt| awk -F " " '{print $(NF-1)}'
+  163  ps -ef
+  164  ps 
+  165  ps -ef
+  166  cat /proc/2519/status
+  167  cat /proc/1422/status
+  168  cat /proc/1422/status | grep state
+  169  cat /proc/1422/status | grep State
+  170  cat /proc/1434/status | grep State
+  171  exit
+  172  cd linuxcmds
+  173  ll
+  174  cut -b 1 employee
+  175  cut -b 1 file1.txt
+  176  cut -b 1,2,3 file1.txt
+  177  cut -b 1-3,7-12 file1.txt
+  178  cut -b -3 employee
+  179  cat employee
+  180  awk -F " " '{print $1-$4}'
+  181  awk -F " " '{print $1-$4}' employee
+  182  awk -F " " '{print $1,$4}' employee
+  183  awk -F " " '{print $1,4}' employee
+  184  awk -F " " '{print $1,fired}' employee
+  185  awk -F " " '{print $1,f}' employee
+  186  awk '/manager/ {print}' employee
+  187  awk '/manager/{print}' employee
+  188  cat employee
+  189  awk '{print NR,$0}' employee
+  190  awk 'END {print NF}' employee
+  191  awk 'END {print $NF}' employee
+  192  awk 'END {print NR}' employee
+  193  awk 'NF > 0' employee
+  194  awk 'NF > 0' file1.txt
+  195  ps
+  196  ps -ef
+  197  ps -ef | head
+  198  cd linuxcmds
+  199  ls -lrt
+  200  cat devopslink.txt
+  201  rm devopslink.txt
+  202  ll
+  203  exit
+  204  ls
+  205  ping
+  206  ping google.com
+  207  ls
+  208  history
+  209  lsof
+  210  lsof -u ec2-user
+  211  whereis lsof
+  212  whereis httpd
+  213  whereis grep
+  214  ls
+  215  exit
+  216  hostname
+  217  history
+  218  touch file{1..5}.log
+  219  ls -lrt
+  220  ls -lrt | awk '{print $NF}'
+  221  vi file1.log
+  222  cat file1.log
+  223  cat file1.log | sed '3d'
+  224  cat file1.log
+  225  cat file1.log | wc -w
+  226  cat file1.log |head +8
+  227  cat file1.log |head -8
+  228  cat file1.log |head -8 | tail -1 | wc -c
+  229  cat file1.log |head -8 | tail -1
+  230  touch abc
+  231  ll
+  232  mkdir dir2
+  233  ll
+  234  touch ball call doll mac cbsc
+  235  ls -lrt
+  236  ls -d ? [ab] *
+  237  ls -d ? [ab]*
+  238  ls -d ?[ab]*
+  239  vi abc
+  240  history
+  241  ssh keygen
+  242  ssh -keygen
+  243  ssh keygen
+  244  man keygen
+  245  man ssh keygen
+  246  exit
+  247  cd linuxcmds
+  248  ll
+  249  mkdir scripts
+  250  cd  scripts
+  251  vi filendir.sh
+  252  chmod u+x  filendir.sh
+  253  ./filendir.sh
+  254  vi filendir.sh
+  255  ./filendir.sh/home/ec2-user/linuxcmds
+  256  cp -r /home/ec2-user/linuxcmds /home/ec2-user/linuxcmds/scripts
+  257  cp -r /home/ec2-user/linuxcmds/*  /home/ec2-user/linuxcmds/scripts
+  258  cp -r /home/ec2-user/linuxcmds/abc1  /home/ec2-user/linuxcmds/scripts
+  259  cp -r /home/ec2-user/linuxcmds/dir1  /home/ec2-user/linuxcmds/scripts
+  260  ll
+  261  cd linuxcmds
+  262  ll
+  263  cd ..
+  264  ll
+  265  rm -rf linuxcmds
+  266  rm -rf scripts
+  267  ll
+  268  ./filendir.sh
+  269  echo "abc1"
+  270  echo abc1*
+  271  cat abc1
+  272  cat >abc1
+  273  cat abc1
+  274  ./filendir.sh
+  275  vi filendir.sh
+  276  ./filendir.sh
+  277  vi filendir.sh
+  278  ./filendir.sh
+  279  ll
+  280  ./filendir.sh
+  281  cd dir1
+  282  ll
+  283  vi filendir.sh
+  284  cd ..
+  285  vi filendir.sh
+  286  ./filendir.sh
+  287  vi filendir.sh
+  288  ./filendir.sh
+  289  vi filendir.sh
+  290  ll
+  291  cd dir1
+  292  ll
+  293  cd ..
+  294  ./filendir.sh
+  295  vi filendir.sh
+  296  ./filendir.sh
+  297  vi filendir.sh
+  298  ./filendir.sh
+  299  vi filendir.sh
+  300  grep -l linux*
+  301  grep -l linux *
+  302  ll
+  303  cat >file2.txt
+  304  cat >file3.txt
+  305  grep -l linux *
+  306  cat file3.txt
+  307  vi file3.txt
+  308  vi file2.txt
+  309  grep -l linux *
+  310  mkdir dir5
+  311  grep -l linux *
+  312  vi patternfind.sh
+  313  chmod u+x patternfind.sh
+  314  ./patternfind.sh
+  315  vi patternfind.sh
+  316  ./patternfind.sh
+  317  vi patternfind.sh
+  318  ./patternfind.sh
+  319  vi patternfind.sh
+  320  grep -l linux *
+  321  grep -l lin *
+  322  grep -lw lin *
+  323  vi patternfind.sh
+  324  cd ..
+  325  ll
+  326  grep -lw lin *
+  327  cd scripts
+  328  ll
+  329  cd dir5
+  330  ll
+  331  cd ..
+  332  grep -lw lin *
+  333  ls
+  334  ll
+  335  ll | grep '^-'
+  336  vi filendir.sh 
+  337  ls -d -1 "$PWD/"*.*
+  338  ls -d -1 "$PWD/"
+  339  ls -d -1 "$PWD/"*
+  340  ls -f -1 "$PWD/"*
+  341  ls -f -1 "$PWD/"
+  342  ls -f -1 
+  343  ll
+  344  ls -f
+  345  ls man
+  346  man ls
+  347  find . -maxdepth 1 -not -type d | xargs ls
+  348  vi filendir.sh 
+  349  find .-name "file" -maxdepth 1 -not -type d | xargs ls
+  350  find . -name "file" -maxdepth 1 -not -type d | xargs ls
+  351  find . -name "file" -maxdepth 1 -not -type f | xargs ls
+  352  find . -name "file" -maxdepth 1 -type f | xargs ls
+  353  ls /home
+  354  ls /home/ec2-user
+  355  pwd
+  356  vi patternfind.sh 
+  357  ./ patternfind.sh 
+  358  ./patternfind.sh 
+  359  echo $?
+  360  grep -l linux *
+  361  echo $?
+  362  vi patternfind.sh 
+  363  ./patternfind.sh 
+  364  echo $?
+  365  ./patternfind.sh 
+  366  echo $?
+  367  vi patternfind.sh 
+  368  ./patternfind.sh 
+  369  vi patternfind.sh 
+  370  ./patternfind.sh 
+  371  vi patternfind.sh 
+  372  ./patternfind.sh 
+  373  vi filendir.sh 
+  374  ./filendir.sh 
+  375  ll
+  376  ./filendir.sh 
+  377  vi filendir.sh 
+  378  ./filendir.sh 
+  379  vi filendir.sh 
+  380  ./filendir.sh 
+  381  vi filendir.sh 
+  382  ./filendir.sh 
+  383  vi filendir.sh 
+  384  ./filendir.sh 
+  385  vi filendir.sh 
+  386  ll
+  387  ll dir1
+  388  ./filendir.sh 
+  389  cd
+  390  ll
+  391  history
+  392  vi filendir.sh 
+  393  cd -
+  394  vi filendir.sh 
+  395  ll
+  396  cd dir1
+  397  ll
+  398  touch file1.txt file2.txt
+  399  cd ..
+  400  ./filendir.sh 
+  401  ls dir1
+  402  ll dir1
+  403  ll dir1 | grep '^-'
+  404  vi filendir.sh 
+  405  ./filendir.sh 
+  406  vi filendir.sh 
+  407  ./filendir.sh 
+  408  vi filendir.sh 
+  409  ./filendir.sh 
+  410  vi filendir.sh 
+  411  ./filendir.sh 
+  412  vi filendir.sh 
+  413  ./filendir.sh 
+  414  vi filendir.sh 
+  415  ./filendir.sh 
+  416  vi filendir.sh 
+  417  ./filendir.sh 
+  418  vi filendir.sh 
+  419  ./filendir.sh 
+  420  vi subgrt.sh
+  421  chmod u+x subgrt.sh
+  422  ./subgrt.sh 6 9
+  423  ./subgrt.sh 9 6
+  424  ll
+  425  vi filendir.sh 
+  426  vi patternfind.sh 
+  427  vi subgrt.sh 
+  428  exit
+  429  cd scripts
+  430  ll
+  431  cd linuxcmds/
+  432  cd scripts/
+  433  cd ll
+  434  ll
+  435  ./patternfind.sh 
+  436  crontab -l
+  437  sudo yum repo list
+  438  sudo yum repolist
+  439  sudo yum repolist rhui-client-config-server-9
+  440  yum install postfix -y
+  441  sudo yum install postfix -y
+  442  vi /etc/postfix/main.cf
+  443  sudo su
+  444  crontab -e
+  445  cd linuxcmds
+  446  cd scripts
+  447  ll
+  448  pwd
+  449  crontab -e
+  450  exit
+  451  cd /linuxcmds/scripts
+  452  cd /home/ec2-user/linuxcmds/scripts
+  453  fibonacci.sh
+  454  vi fibonacci.sh
+  455  sh fibonacci.sh
+  456  vi fibonacci.sh
+  457  sh fibonacci.sh
+  458  vi fibonacci.sh
+  459  sh fibonacci.sh
+  460  vi employee
+  461  vi employ
+  462  mv employ employip
+  463  vi employ
+  464  mv employ employ.sh
+  465  sh employ.sh employip
+  466  vi employ.sh
+  467  sh employ.sh employip
+  468  vi employ.sh
+  469  sh employ.sh employip
+  470  cat employip
+  471  vi employ.sh
+  472  sh employ.sh employip
+  473  vi employ.sh
+  474  sh employ.sh employip
+  475  vi employ.sh
+  476  sh employ.sh employip
+  477  vi employ.sh
+  478  sh employ.sh employip
+  479  vi employ.sh
+  480  sh employ.sh employip
+  481  vi employ.sh
+  482  sh employ.sh employip
+  483  vi employ.sh
+  484  sh employ.sh employip
+  485  vi employ.sh
+  486  var=employip
+  487  echo "$var" | awk -F ":" '{print $NF}
+  488  var=employip echo "$var" | awk -F ":" '{print $NF}
+  489  awk -F ":" '{print $NF} employip
+  490  awk '{print $NF} employip
+  491  awk -F ":" '{print $NF}' employip
+  492  vi employ.sh
+  493  awk -F ":" '{print $NF}' | tail -n+1 employip
+  494  vi employ.sh
+  495  sh employ.sh employip
+  496  vi employ.sh
+  497  vi test.sh
+  498  ll
+  499  sh  test.sh
+  500  sh  test.sh employip
+  501  vi test.sh
+  502  sh  test.sh employip
+  503  vi test.sh
+  504  sh  test.sh employip
+  505  vi test.sh
+  506  sh  test.sh employip
+  507  vi test.sh
+  508  sh  test.sh employip
+  509  vi test.sh
+  510  sh  test.sh employip
+  511  vi test.sh
+  512  sh  test.sh employip
+  513  vi test.sh
+  514  sh  test.sh employip
+  515  vi test.sh
+  516  ll
+  517  vi employ.sh
+  518  sh employ.sh employip
+  519  cat employip
+  520  vi employ.sh
+  521  vi factofnnum.sh
+  522  sh factofnnum.sh
+  523  sh factofnnum.sh 4 5
+  524  vi factofnnum.sh
+  525  sh factofnnum.sh 4 5
+  526  vi factofnnum.sh
+  527  sh factofnnum.sh 4 5
+  528  vi factofnnum.sh
+  529  sh factofnnum.sh 4 5
+  530  vi factofnnum.sh
+  531  sh factofnnum.sh 4 5
+  532  vi factofnnum.sh
+  533  sh factofnnum.sh 2 3 4 5 6 7 8 9
+  534  vi factofnnum.sh
+  535  sh factofnnum.sh 2 3 4 5 6 7 8 9
+  536  vi factofnnum.sh
+  537  ll
+  538  vi fibonacci.sh
+  539  vi employ.sh
+  540  vi factofnnum.sh
+  541  sh fibonacci.sh 5
+  542  sh fibonacci.sh 
+  543  date
+  544  date %+time
+  545  cd linuxcmds
+  546  cd scripts/
+  547  ll
+  548  vi chkserv.sh
+  549  sh chkserv.sh
+  550  sh chkserv.sh hyd
+  551  vi chkserv.sh
+  552  sh chkserv.sh httpd
+  553  which httpd
+  554  sudo yum install httpd
+  555  sudo systemctl start httpd
+  556  sudo systemctl status httpd
+  557  sh chkserv.sh httpd
+  558  sudo systemctl stop httpd
+  559  exit
+  560  cd linuxcmds
+  561  cd scripts
+  562  vi biggestofnnum.sh
+  563  chmod u+x  biggestofnnum.sh
+  564  ./biggestofnnum.sh 5 8 7 3 9 2
+  565  vi biggestofnnum.sh
+  566  ./biggestofnnum.sh 5 8 7 3 9 2
+  567  vi biggestofnnum.sh
+  568  ./biggestofnnum.sh 5 8 7 3 9 2
+  569  vi biggestofnnum.sh
+  570  ./biggestofnnum.sh 5 8 7 3 9 2
+  571  vi biggestofnnum.sh
+  572  ./biggestofnnum.sh 5 8 7 3 9 2
+  573  vi biggestofnnum.sh
+  574  ./biggestofnnum.sh 5 8 7 3 9 2
+  575  vi biggestofnnum.sh
+  576  ./biggestofnnum.sh 5 8 7 3 9 2
+  577  vi biggestofnnum.sh
+  578  ./biggestofnnum.sh 5 8 7 3 9 2
+  579  vi biggestofnnum.sh
+  580  ./biggestofnnum.sh 5 8 7 3 9 2
+  581  ./biggestofnnum.sh 5 4 7 3 9 2
+  582  vi biggestofnnum.sh
+  583  vi chkservice.sh
+  584  chmod u+x chkservice.sh
+  585  ./chkservice.sh
+  586  sudo systemctl start httpd
+  587  ./chkservice.sh
+  588  sudo systemctl stop httpd
+  589  ll
+  590  chmod u+x revfile.sh
+  591  ll
+  592  vi revfile.sh
+  593  cat abc1
+  594  ./revfile.sh abc1
+  595  vi biggestofnnum.sh
+  596  ./biggestofnnum.sh 7 5 3 9 4 2 6
+  597  ./biggestofnnum.sh 6 8 4 3 7 9 2
+  598  ./biggestofnnum.sh 99 43 54 32 100
+  599  exit
+  600  cd home/ec2-user/linuxcmds/scripts
+  601  ll
+  602  cd linuxcmds
+  603  cd scripts
+  604  vi revfile.sh
+  605  sh revfile.sh abc
+  606  ll
+  607  sh revfile.sh abc1
+  608  vi revfile.sh
+  609  sh revfile.sh abc1
+  610  cat abc1
+  611  tac abc1
+  612  vi revfile.sh
+  613  cd linuxcmds
+  614  cd scripts
+  615  ll
+  616  vi revfile.sh
+  617  sh revfile.sh abc1
+  618  cat abc1
+  619  vi revfile.sh
+  620  sh revfile.sh abc1
+  621  cd linuxcmds
+  622  cd scripts
+  623  vi casemenu.sh
+  624  chmod u+x casemenu.sh
+  625  ./ casemenu.sh
+  626  ./casemenu.sh
+  627  vi casemenu.sh
+  628  ll
+  629  pwd
+  630  vi casemenu.sh
+  631  ./casemenu.sh
+  632  vi casemenu.sh
+  633  ./casemenu.sh
+  634  vi casemenu.sh
+  635  ./casemenu.sh
+  636  vi casemenu.sh
+  637  ./casemenu.sh
+  638  ll
+  639  ./casemenu.sh
+  640  ll
+  641  vi casemenu.sh
+  642  ./casemenu.sh
+  643  ll
+  644  vi casemenu.sh
+  645  ./casemenu.sh
+  646  vi casemenu.sh
+  647  ./casemenu.sh
+  648  ll
+  649  ./casemenu.sh
+  650  ll
+  651  curl -Is
+  652  curl -Is google.com
+  653  curl -Is www.google.com
+  654  curl -Is www.google.com/edcl
+  655  curl -Is www.google.com/edcl | head -1
+  656  curl -Is www.google.com/edcl | head -1 | awk '{print $3}'
+  657  curl -Is www.google.com/edcl | head -1 | awk '{print $2}'
+  658  vi ll
+  659  ll
+  660  vi chkstatus.sh
+  661  chmod u+x chkstatus.sh
+  662  ./chkstatus.sh
+  663  vi chkstatus.sh
+  664  ./chkstatus.sh
+  665  vi chkstatus.sh
+  666  ll
+  667  vi accending.sh
+  668  vi fileswap.sh 
+  669  exit
+  670  ll
+  671  logout
+  672  ssh ec2-user@13.233.97.87
+  673  ssh-keygen
+  674  cat /home/ec2-user/.ssh/id_rsa.pub
+  675  ssh ec2-user@172.31.43.141
+  676  ll
+  677  cd .ssh
+  678  ll
+  679  vi authorized_keys 
+  680  cd .ssh
+  681  ll
+  682  vi id_rsa.pub 
+  683  ls
+  684  cd linuxcmds/
+  685  ll
+  686  cd scripts/
+  687  ls -lt
+  688  ls -ltr
+  689  vi abc1
+  690  du
+  691  du -sh
+  692  du -sh abc1
+  693  du -sh *
+  694  free -h
+  695  ll
+  696  echo "owener of this file is root user" >rootfile
+  697  ll
+  698  ls -rt
+  699  ls -lrt
+  700  ls -lt
+  701  chown root rootfile 
+  702  sudo chown root rootfile 
+  703  ll
+  704  useradd kiran
+  705  sudo useradd kiran
+  706  cat /etc/passwd
+  707  passwd kiran
+  708  sudo passwd kiran
+  709  sudo chown kiran rootfile 
+  710  ll
+  711  grpadd devops
+  712  groupadd devops
+  713  sudo groupadd devops
+  714  cat /etc/passwd
+  715  cat /etc/group
+  716  sudo chown kiran:devops rootfile 
+  717  ll
+  718  chgrp ec2-user rootfile 
+  719  sudo chgrp ec2-user rootfile 
+  720  ll
+  721  sudo chgrp devops rootfile 
+  722  ll
+  723  cd dir1
+  724  ll
+  725  cp /home/ec2-user/linuxcmds/scripts/employee employip employ.sh /dir1
+  726  cp /home/ec2-user/linuxcmds/scripts/employee employip employ.sh .
+  727  cp /home/ec2-user/linuxcmds/scripts/employee employip employ.sh /.
+  728  cp /home/ec2-user/linuxcmds/scripts/employee employip employ.sh /home/ec2-user/linuxcmds/scripts/dir1
+  729  cp /home/ec2-user/linuxcmds/scripts/employee employip employ.sh /home/ec2-user/linuxcmds/scripts/dir1/
+  730  cp /home/ec2-user/linuxcmds/scripts/employee employip employ.sh /home/ec2-user/linuxcmds/scripts/dir1/dir1
+  731  cp employee employip employ.sh /home/ec2-user/linuxcmds/scripts/dir1/
+  732  cd dir1
+  733  ll
+  734  cd .
+  735  cd ..
+  736  wc abc1
+  737  wc -l abc1
+  738  grep -l "hello" *
+  739  grep -lR "hello" *
+  740  grep -l-R "hello" *
+  741  grep -l -R "hello" *
+  742  grep -l -R -c "hello" *
+  743  grep -c hello abc1
+  744  abc1 head -5
+  745  abc1 head-5
+  746  head-5 abc1
+  747  head -5 abc1
+  748  head -5 abc1 | tail -1
+  749  cat abc1 | head -5 | tail -1
+  750  cat abc1 | head -5 | tail -1 | wc -c
+  751  vi useradd.sh
+  752  useradd kumar:devops
+  753  vi useradd.sh
+  754  chmod u+x useradd.sh
+  755  ./useradd.sh
+  756  cat /etc/passwd
+  757  ./useradd.sh
+  758  cat /etc/passwd
+  759  cat /etc/group
+  760  ./useradd.sh
+  761  vi useradd.sh
+  762  ll
+  763  sed -n '3p' abc1
+  764  sed -n '3,4p' abc1
+  765  sed -n '3,6p' abc1
+  766  sed -n '3-6p' abc1
+  767  find . -type f -mtime +90
+  768  find . -type f -mtime +30
+  769  find . -type f -mtime +10
+  770  find . -type f -mtime +6
+  771  find . -type f -mtime +3
+  772  find . -type f -mtime -3
+  773  find . -type f -mmin -3
+  774  find . -type f -mmin +3
+  775  find . -type f -maxdepth -1 -mmin +3
+  776  find . -maxdepth -type f  -1 -mmin +3
+  777  find . -maxdepth -1 -type f -mmin +3
+  778  find . -maxdepth +1 -type f -mmin +3
+  779  find . -maxdepth 1 -type f -mmin +3
+  780  find . -maxdepth 2 -type f -mmin +3
+  781  find . -maxdepth 2 -type f -mmin +3 -size +10k
+  782  find . -maxdepth 2 -type f -mmin +3 -size +10m
+  783  find . -maxdepth 2 -type f -mmin +3 -size +10M
+  784  find . -maxdepth 2 -type f -mmin +3 -size +0
+  785  touch emptyfile
+  786  find . -maxdepth 2 -type f -mmin +3 -size +0
+  787  find . -maxdepth 2 -type f -mmin +3 -size +0 | grep empty
+  788  find . -maxdepth 2 -type f -mmin +3 -size +0 | grep em
+  789  su -kiran
+  790  su - kiran
+  791  su - ramesh
+  792  vi /etc/sudoers
+  793  cat /etc/sudoers
+  794  sudo cat /etc/sudoers
+  795  exit
+  796  cd linuxcmds/
+  797  cd scripts/
+  798  vi addlinenum.sh
+  799  chmod u+x addlinenum.sh
+  800  ./addlinenum.sh abc1
+  801  vi addlinenum.sh
+  802  ./addlinenum.sh abc1
+  803  ll
+  804  cat file7
+  805  vi addlinenum.sh
+  806  rm file7
+  807  ./addlinenum.sh abc1
+  808  cat file7
+  809  git --version
+  810  uname -v
+  811  uname -a
+  812  uname -r
+  813  cat /etc/os-release
+  814  cat /etc/os-release | grep -i version
+  815  cat /etc/os-release | grep -iw version
+  816  mail
+  817  df -h
+  818  df -h .
+  819  df -h . |tail -1|awk '{print $5}'
+  820  df -h . |tail -1|awk '{print $5}'|sed s/%/ /g
+  821  df -h . |tail -1|awk '{print $5}'|sed 's/%/ /g'
+  822  vi addlinenum.sh
+  823  ll
+  824  rm file7
+  825  date
+  826  crontab -l
+  827  crontab -e
+  828  ll
+  829  date
+  830  ll
+  831  crontab -e
+  832  ll
+  833  crontab -e
+  834  ls
+  835  crontab -e
+  836  ls
+  837  ll
+  838  vi addlinenum.sh
+  839  ls -lrt
+  840  vi addlinenum.sh
+  841  crontab -e
+  842  ls -lrt
+  843  ll
+  844  crontab -e
+  845  ll
+  846  vi addlinenum.sh
+  847  ll
+  848  ./addlinenum.sh
+  849  ll
+  850  cat file7
+  851  rm file7
+  852  crontab -e
+  853  ll
+  854  date
+  855  ll
+  856  date
+  857  ll
+  858  ./addlinenum.sh
+  859  ll
+  860  rm file7
+  861  ll
+  862  crontab -e
+  863  ll
+  864  vi /etc/crontab
+  865  ll
+  866  crontab -e
+  867  ll
+  868  scp addlinenum.sh abc1 ec2-user@172.31.43.141:/home/ec2-user/
+  869  vi revfile.sh
+  870  vi revfile2.sh
+  871  chmod u+x revfile2.sh
+  872  ./revfile2.sh
+  873  cat abc1
+  874  vi revstr2.sh
+  875  wc -c linux
+  876  linux wc -c
+  877  echo "linux" wc -c
+  878  echo "linux"| wc -c
+  879  vi revstr2.sh
+  880  echo "linux"| cut -c 1
+  881  echo "linux"| cut -c 3
+  882  vi revstr2.sh
+  883  chmod u+x revstr2.sh
+  884  ./revstr2.sh
+  885  vi revstr2.sh
+  886  ./revstr2.sh
+  887  vi revstr2.sh
+  888  ./revstr2.sh
+  889  vi revstr2.sh
+  890  ./revstr2.sh
+  891  vi revstr2.sh
+  892  ./revstr2.sh
+  893  ./revstr.sh
+  894  ./revstr.sh linux
+  895  exit
+  896  cd linuxcmds/
+  897  cd scripts/
+  898  vi evennodd.sh
+  899  chmod u+x evennodd.sh
+  900  ./evennodd.sh
+  901  ll
+  902  chmod u+x chkserv.sh
+  903  chmod u+x employ.sh
+  904  chmod u+x factofnnum.sh
+  905  chmod u+x fibonacci.sh
+  906  ll
+  907  ./patternfind.sh
+  908  vi useradd.sh
+  909  ll
+  910  vi useradd.sh
+  911  exit
+  912  cd linuxcmds/
+  913  cd scripts/
+  914  ll
+  915  which git
+  916  ls -a
+  917  git init
+  918  sudo yum install git
+  919  which git
+  920  git -version
+  921  git --version
+  922  git init
+  923  git config --global init.defaultBranch master
+  924  git branch
+  925  git config --global user.name "Kempegowda"
+  926  git config --global user.email "Kempegowdamsrit@gmail"
+  927  git remote add origin https://github.com/Kempegowda-bu/dev_workspace.git
+  928  git status
+  929  git add *
+  930  git status
+  931  git commit -m "first commit of shell scripts"
+  932  git push
+  933  git push --set-upstream origin master
+  934  git statu
+  935  git status
+  936  git remote -v
+  937  cd
+  938  cd .ssh
+  939  cat id_rsa.pub
+  940  git remote set-url origin git@github.com:Kempegowda-bu/dev_workspace.git
+  941  git remote set-url origin git@github.com:Kempegowda-bu/dev_workspace
+  942  git remote add origin ssh:git@github.com:Kempegowda-bu/dev_workspace.git
+  943  git remote -v
+  944  git remote set-url origin git@github.com:Kempegowda-bu/dev_workspace
+  945  git remote set-url origin git@github.com:Kempegowda-bu/dev_workspace.git
+  946  git remote -v
+  947  cd -
+  948  cd linuxcmds/
+  949  cd scripts/
+  950  git remote -v
+  951  git remote set-url origin git@github.com:Kempegowda-bu/dev_workspace.git
+  952  git remote -v
+  953  history
+  954  vi sample.txt
+  955  sed -n '/webserver/,/appserver/{/webserver/!{/appserver/! p}}' sample.txt
+  956  sed -n '/^1/p' sample.txt
+  957  awk "/webserver/,/appserver/"
+  958  awk "/webserver/,/appserver/" sample.txt
+  959  awk "/webserver/,/appserver/" sample.txt | egrep -v "webserver|appserver"
+  960  awk "/webserver/,/appserver/" sample.txt | egrep -vi "webserver|appserver"
+  961  awk "/webserver/,/appserver/" sample.txt | egrep -vi "WEBserver|Appserver"
+  962  history >history.txt
