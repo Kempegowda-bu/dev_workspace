@@ -3,6 +3,7 @@ Arunachal Pradesh
 Assam
 Bihar
 Chhattisgarh
+
 Goa
 Gujarat
 Haryana
@@ -13,6 +14,7 @@ Karnataka
 Kerala
 Madhya Pradesh
 Maharashtra
+
 Manipur
 Meghalaya
 Mizoram
@@ -22,6 +24,7 @@ Punjab
 Rajasthan
 Sikkim
 Tamil Nadu
+
 Telangana
 Tripura
 Uttar Pradesh
@@ -31,6 +34,7 @@ $ cat capital.txt
 Hyderabad
 Itanagar
 Dispur
+
 Patna
 Raipur
 Panaji
