@@ -14,6 +14,7 @@ fi
 echo "sum of $var1 and $var2 is $sum"
 echo "subtraction of $var1 and $var2 is $subtr"
 echo "multiplaction of $var1 and $var2 is $mul"
+
 echo "divission of $var1 and $var2 is $div"
 
 
