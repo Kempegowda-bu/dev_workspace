@@ -1,4 +1,5 @@
 #!/bin/bash
+
 sed '1d' $1 >file
 echo "Name of the employes who's age is more than 30 is :"
 while read line
